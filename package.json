@@ -1,0 +1,31 @@
+{
+  "name": "quick-cast",
+  "version": "1.0.0",
+  "private": true,
+
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+
+  "scripts": {
+    "dev:web": "npm run dev -w apps/web",
+    "dev:api": "npm run start:dev -w apps/api",
+    "dev": "concurrently \"npm run dev:web\" \"npm run dev:api\"",
+
+    "build:web": "npm run build -w apps/web",
+    "build:api": "npm run build -w apps/api",
+    "build": "npm run build:web && npm run build:api",
+
+    "lint": "npm run lint -ws",
+
+    "redis:up": "docker compose up -d",
+    "redis:down": "docker compose down",
+
+    "install:all": "npm install"
+  },
+
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
