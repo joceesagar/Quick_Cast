@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { PollsModule } from './polls/polls.module';
+import { PollsModule } from './polls/polls.module.js';
 
 @Module({
   imports: [
